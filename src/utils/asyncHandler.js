@@ -1,13 +1,13 @@
 const asyncHandler = (requestHandler) => {
-  (req, res, next) => {
-    Promise.resolve().catch((err) => next(err));
+  return (req, res, next) => {
+    Promise.resolve(requestHandler(req, res, next)).catch((err) => next(err));
   };
 };
 
+export { asyncHandler };
+
 // this is wrapper form
 //promise has resolve and reject
-
-export { asyncHandler };
 
 // const asyncHandler = (fn) => async (req , res , next)=>{
 //     try{

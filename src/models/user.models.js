@@ -31,7 +31,7 @@ const userSchema = new Schema(
 
     avatar: {
       type: String, // cloudinary service will be used
-      required: true,
+      required: false,
     },
     coverImage: {
       type: String,
@@ -47,7 +47,7 @@ const userSchema = new Schema(
       required: [true, "Password is required"],
     },
     refreshToken: {
-      type: string,
+      type: String,
     },
   },
   { timestamps: true }

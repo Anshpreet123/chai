@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import { DB_NAME } from "./constants.js";
 import connectDB from "./db/index.js";
+import { app } from "../src/app.js";
 
 // while importing it is very much required
 dotenv.config({
@@ -11,7 +12,7 @@ dotenv.config({
 
 connectDB()
   // when  we use async then we get promises too
-  // so we hav eto handle them also
+  // so we  hav eto handle them also
 
   .then(() => {
     app.listen(process.env.PORT || 8000, () => {

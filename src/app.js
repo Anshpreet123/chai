@@ -21,4 +21,14 @@ app.use(express.static("public"));
 // for any public static files
 app.use(cookieParser());
 
+// Routes
+
+import userRoutes from "../src/routes/user.routes.js";
+
+// app.use("/users" , userRoutes)
+app.use("/api/v1/users", userRoutes);
+app.get("/", (req, res) => {
+  res.send("not h=goodd");
+});
+
 export { app };
